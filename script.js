@@ -108,49 +108,74 @@ document.addEventListener('DOMContentLoaded', () => {
   animateParticles();
 
   /* ─────────────────── NAVBAR ─────────────────── */
-  const navbar = document.getElementById('navbar');
+const navbar = document.getElementById('navbar');
+const navLinks = document.querySelectorAll('.nav-link');
 
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 30);
+/* EFECTO SCROLL (blur + sombra elegante) */
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY > 40;
+  navbar.classList.toggle('scrolled', scrolled);
+});
+
+/* ACTIVE LINK DINÁMICO (SUAVE Y PRECISO) */
+const sections = document.querySelectorAll('section[id]');
+
+window.addEventListener('scroll', () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.offsetHeight;
+
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
   });
 
-  // Active link on scroll
-  const sections  = document.querySelectorAll('section[id]');
-  const navLinks  = document.querySelectorAll('.nav-link');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + entry.target.id) {
-            link.classList.add('active');
-          }
-        });
-      }
-    });
-  }, { threshold: 0.4 });
-
-  sections.forEach(s => observer.observe(s));
-
-  /* ─────────────────── HAMBURGER ─────────────────── */
-  const hamburger = document.getElementById('hamburger');
-  const navMenu   = document.getElementById('navLinks');
-
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('open');
-    document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
   });
+});
 
-  navMenu.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+/* ─────────────────── HAMBURGER PREMIUM ─────────────────── */
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('open');
+
+  // 🔥 Bloquea scroll cuando menú está abierto
+  document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : 'auto';
+});
+
+/* CERRAR MENÚ AL HACER CLICK */
+navMenu.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('open');
+    document.body.style.overflow = 'auto';
   });
+});
 
+/* ─────────────────── EFECTO SUAVE AL HACER CLICK ─────────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+
+    if (target) {
+      e.preventDefault();
+
+      window.scrollTo({
+        top: target.offsetTop - 70,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
   /* ─────────────────── SCROLL REVEAL ─────────────────── */
   const revealElements = document.querySelectorAll(
     '.section-label, .section-title, .about-text, .about-cards, ' +
@@ -213,38 +238,52 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ─────────────────── CONTACT FORM ─────────────────── */
-  const form    = document.getElementById('contactForm');
-  const btnText = document.getElementById('btnText');
-  const success = document.getElementById('formSuccess');
+  const form = document.getElementById("contactForm");
+const successMsg = document.getElementById("formSuccess");
+const btnText = document.getElementById("btnText");
 
-  function validateField(id, errorId, testFn) {
-    const field = document.getElementById(id);
-    const err   = document.getElementById(errorId);
-    const valid = testFn(field.value.trim());
-    err.classList.toggle('show', !valid);
-    return valid;
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // VALIDACIÓN BÁSICA (usa la tuya si ya tienes)
+  const nombre = document.getElementById("nombre").value.trim();
+  const correo = document.getElementById("correo").value.trim();
+  const mensaje = document.getElementById("mensaje").value.trim();
+
+  if (!nombre || !correo || !mensaje) {
+    alert("Completa todos los campos");
+    return;
   }
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
+  // LOADER EN BOTÓN
+  btnText.innerText = "Enviando...";
+  form.querySelector("button").disabled = true;
 
-    const n = validateField('nombre', 'nombreError', v => v.length >= 2);
-    const c = validateField('correo', 'correoError', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
-    const m = validateField('mensaje', 'mensajeError', v => v.length >= 10);
+  // 🔥 MAPEO A EMAILJS
+  const params = {
+    name: nombre,
+    email: correo,
+    message: mensaje
+  };
+  /* ─────────────────── service id, template id ─────────────────── */
+  emailjs.send("service_exp6h7i", "template_ng6x5bv", params)
+    .then(() => {
+      successMsg.classList.add("show");
+      form.reset();
 
-    if (n && c && m) {
-      // Simulate send
-      btnText.textContent = 'Enviando…';
-      form.querySelector('button').disabled = true;
       setTimeout(() => {
-        form.reset();
-        success.classList.add('show');
-        btnText.textContent = 'Enviar mensaje';
-        form.querySelector('button').disabled = false;
-        setTimeout(() => success.classList.remove('show'), 5000);
-      }, 1500);
-    }
-  });
+        successMsg.classList.remove("show");
+      }, 4000);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("Error al enviar el mensaje ❌");
+    })
+    .finally(() => {
+      btnText.innerText = "Enviar mensaje";
+      form.querySelector("button").disabled = false;
+    });
+});
 
   // Inline validation on blur
   document.getElementById('nombre').addEventListener('blur', () =>
@@ -307,3 +346,57 @@ prev.addEventListener('click', () => {
   index = (index - 1 + slides.length) % slides.length;
   updateCarousel();
 });
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm("service_exp6h7i", "template_ng6x5bv", this)
+    .then(() => {
+      showSuccess();
+      this.reset();
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      showError();
+    });
+});
+
+/* MENSAJE PRO (sin alert feo) */
+function showSuccess() {
+  const msg = document.createElement("div");
+  msg.innerText = "✅ Mensaje enviado correctamente";
+  msg.style.position = "fixed";
+  msg.style.bottom = "20px";
+  msg.style.right = "20px";
+  msg.style.padding = "12px 20px";
+  msg.style.background = "rgba(0,255,136,0.1)";
+  msg.style.border = "1px solid rgba(0,255,136,0.4)";
+  msg.style.color = "#00ff88";
+  msg.style.borderRadius = "8px";
+  msg.style.backdropFilter = "blur(10px)";
+  msg.style.boxShadow = "0 0 20px rgba(0,255,136,0.2)";
+  msg.style.zIndex = "9999";
+
+  document.body.appendChild(msg);
+
+  setTimeout(() => msg.remove(), 3000);
+}
+
+function showError() {
+  const msg = document.createElement("div");
+  msg.innerText = "❌ Error al enviar el mensaje";
+  msg.style.position = "fixed";
+  msg.style.bottom = "20px";
+  msg.style.right = "20px";
+  msg.style.padding = "12px 20px";
+  msg.style.background = "rgba(255,0,80,0.1)";
+  msg.style.border = "1px solid rgba(255,0,80,0.4)";
+  msg.style.color = "#ff4d6d";
+  msg.style.borderRadius = "8px";
+  msg.style.backdropFilter = "blur(10px)";
+  msg.style.boxShadow = "0 0 20px rgba(255,0,80,0.2)";
+  msg.style.zIndex = "9999";
+
+  document.body.appendChild(msg);
+
+  setTimeout(() => msg.remove(), 3000);
+}
