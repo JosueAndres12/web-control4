@@ -3,444 +3,1217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Control4.0</title>
+
+  <title>Control4.0 | Automatización Industrial</title>
+
+  <meta name="description" content="Soluciones de automatización industrial, mantenimiento, SCADA, impresión 3D y tecnología Industria 4.0 en Tijuana." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Syne:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
+
+  <!-- EMAILJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 </head>
+
 <body>
 
-  <!-- CURSOR PERSONALIZADO -->
+  <!-- CURSOR -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-trail" id="cursorTrail"></div>
 
-  <!-- PARTÍCULAS DE FONDO -->
+  <!-- PARTICLES -->
   <canvas id="particleCanvas"></canvas>
 
-  <!-- ═══════════════════════════════════════ NAVBAR ═══════════════════════════════════════ -->
+  <!-- ========================================================= -->
+  <!-- NAVBAR -->
+  <!-- ========================================================= -->
+
   <nav class="navbar" id="navbar">
+
     <div class="nav-container">
+
+      <!-- LOGO -->
       <a href="#inicio" class="nav-logo">
-        <span class="logo-text"><span class="logo-accent"><img src="logo.png" width="60%" alt="Control 4.0 Automatización logo: Lime green geometric grid pattern on gray background representing industrial automation, with CONTROL 4.0 AUTOMATIZACIÓN in white text on the right, conveying innovation and technological precision"></span></span>
+
+        <img src="logo.png" alt="Control4.0 Logo" class="logo-img" />
+
       </a>
 
+      <!-- MENU -->
       <ul class="nav-links" id="navLinks">
-        <li><a href="#inicio" class="nav-link" data-text="Inicio">Inicio</a></li>
-        <li><a href="#acerca" class="nav-link" data-text="Acerca">Acerca de nosotros</a></li>
-        <li><a href="#servicios" class="nav-link" data-text="Servicios">Servicios</a></li>
-        <li><a href="#galeria" class="nav-link" data-text="Galería">Galería</a></li>
-        <li><a href="#contacto" class="nav-link" data-text="Contacto">Contacto</a></li>
+
+        <li>
+          <a href="#inicio" class="nav-link">
+            Inicio
+          </a>
+        </li>
+
+        <li>
+          <a href="#acerca" class="nav-link">
+            Nosotros
+          </a>
+        </li>
+
+        <li>
+          <a href="#servicios" class="nav-link">
+            Servicios
+          </a>
+        </li>
+
+        <li>
+          <a href="#suministros" class="nav-link">
+            Suministros
+         </a>
+        </li>
+
+        <li>
+          <a href="#galeria" class="nav-link">
+            Galería
+          </a>
+        </li>
+
+        <li>
+          <a href="#contacto" class="nav-link nav-contact">
+            Contacto
+          </a>
+        </li>
+
       </ul>
 
-      <button class="hamburger" id="hamburger" aria-label="Menú">
-        <span></span><span></span><span></span>
+      <!-- HAMBURGER -->
+      <button class="hamburger" id="hamburger">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
       </button>
+
     </div>
+
   </nav>
 
-  <!-- ═══════════════════════════════════════ INICIO ═══════════════════════════════════════ -->
+  <!-- ========================================================= -->
+  <!-- HERO -->
+  <!-- ========================================================= -->
+
   <section id="inicio" class="hero">
+
     <div class="hero-bg-grid"></div>
+
     <div class="hero-orbs">
+
       <div class="orb orb-1"></div>
       <div class="orb orb-2"></div>
       <div class="orb orb-3"></div>
+
     </div>
 
     <div class="hero-content">
+
       <div class="hero-badge">
+
         <span class="badge-dot"></span>
+        INDUSTRIA 4.0
+
       </div>
+
       <h1 class="hero-title">
-        <span class="title-line" data-aos="fade-up"> Automatizacion </span>
-        <span class="title-line glitch" data-text="ya Existe" data-aos="fade-up" data-aos-delay="90">que Impulsa Resultados</span>
+
+        <span class="title-line">
+          Automatización
+        </span>
+
+        <span class="title-line gradient-text">
+          que impulsa resultados
+        </span>
+
       </h1>
-      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-        Control 4.0 Automatización es más que una empresa, somos un equipo apasionado de profesionales que están listos para enfrentar los desafíos más complejos en el mundo de la automatización.
+
+      <p class="hero-subtitle">
+
+        Transformamos procesos industriales mediante automatización,
+        mantenimiento avanzado, integración tecnológica y soluciones
+        inteligentes para empresas modernas.
+
       </p>
-      <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+
+      <div class="hero-actions">
+
         <a href="#servicios" class="btn btn-primary">
-          <span>Explorar</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+
+          <span>Explorar Servicios</span>
+
         </a>
-        <a href="#acerca" class="btn btn-ghost">Conocernos</a>
+
+        <a href="#contacto" class="btn btn-ghost">
+
+          Contactar
+
+        </a>
+
       </div>
+
+      <!-- STATS -->
       <div class="hero-stats">
-        <div class="stat"><span class="stat-num" data-target="98">0</span><span>%</span><p>Precisión</p></div>
+
+        <div class="stat">
+
+          <span class="stat-num" data-target="98">0</span>
+          <span>%</span>
+
+          <p>Precisión</p>
+
+        </div>
+
         <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num" data-target="500">0</span><span>+</span><p>Clientes</p></div>
+
+        <div class="stat">
+
+          <span class="stat-num" data-target="500">0</span>
+          <span>+</span>
+
+          <p>Clientes</p>
+
+        </div>
+
         <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num" data-target="12">0</span><span>M</span><p>Datos/seg</p></div>
+
+        <div class="stat">
+
+          <span class="stat-num" data-target="24">0</span>
+          <span>/7</span>
+
+          <p>Soporte</p>
+
+        </div>
+
       </div>
+
     </div>
 
+    <!-- VISUAL -->
     <div class="hero-visual">
+
       <div class="hex-grid">
-        <div class="hex active"></div><div class="hex"></div><div class="hex active"></div>
-        <div class="hex"></div><div class="hex core"></div><div class="hex"></div>
-        <div class="hex active"></div><div class="hex"></div><div class="hex active"></div>
+
+        <div class="hex active"></div>
+        <div class="hex"></div>
+        <div class="hex active"></div>
+
+        <div class="hex"></div>
+        <div class="hex core"></div>
+        <div class="hex"></div>
+
+        <div class="hex active"></div>
+        <div class="hex"></div>
+        <div class="hex active"></div>
+
       </div>
+
     </div>
 
+    <!-- SCROLL -->
     <div class="scroll-indicator">
+
       <div class="scroll-line"></div>
       <span>Scroll</span>
+
     </div>
+
   </section>
 
-  <!-- ═══════════════════════════════════════ ACERCA ═══════════════════════════════════════ -->
-  <section id="acerca" class="about">
-    <div class="section-container">
-      <div class="section-label">// 01 — ACERCA</div>
-      <h2 class="section-title">Bienvenido a control4.0.<br/><span class="accent"></span></h2>
+  <!-- ========================================================= -->
+<!-- NOSOTROS PREMIUM INDUSTRIAL -->
+<!-- ========================================================= -->
+<section id="acerca" class="about-industrial">
 
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="about-lead">
-            En Control 4.0 Automatización, estamos comprometidos con la revolución de la automatización industrial y la tecnología avanzada. Fundada en el 2010, nuestra empresa ha estado a la vanguardia de la innovación en automatización desde el principio. Nuestra visión es transformar la forma en que las industrias operan, optimizando procesos, mejorando la eficiencia y aumentando la productividad. 
-          <p class="about-lead">
-              <li>Se complace en ofrecer una propuesta de 
-servicios para dar soporte a su compañía y 
-que pueda lograr sus objetivos de mejora, 
-ayudando con esto a la satisfacción del 
-cliente; ofreciendo formación y soporte postventa para los servicios o ventas que se 
-soliciten.</li>
-          </p>
-          <p class="about-lead"><li><div class="about-grid">
-  <div class="about-text">
-<p class="about-text-main">
-  <h4 class="about-subtitle">Enfocando todos los proyectos hacia la Industria 4.0:</h4>
+  <div class="section-container">
 
-<ul class="about-list">
-  <li>Internet de las Cosas (IoT)</li>
-  <li>Big Data y Análisis de Datos</li>
-  <li>Inteligencia Artificial (IA) y Machine Learning (ML)</li>
-  <li>Sistemas Ciberfísicos (CPS)</li>
-  <li>Fabricación Aditiva (Impresión 3D)</li>
-  <li>Robótica Avanzada</li>
-  <li>Realidad Aumentada (AR) y Realidad Virtual (VR)</li>
-  <li>Ciberseguridad</li>
-  <li>Cloud Computing</li>
-  <li>Integración Horizontal y Vertical</li>
-</ul>
-    </p>
+    <div class="section-label">
+      // 01 — NOSOTROS
+    </div>
+
+    <div class="about-industrial-box">
+
+      <!-- LEFT CONTENT -->
+      <div class="about-left">
+
+        <div class="about-mini-logo">
+          CONTROL 4.0 AUTOMATIZACIÓN
+        </div>
+
+        <h2 class="about-main-title">
+          Nuestro
+          <span>Compromiso</span>
+        </h2>
+
+        <div class="about-line"></div>
+
+        <p class="about-description">
+
+          En Control 4.0 Automatización impulsamos la transformación
+          industrial mediante automatización inteligente,
+          soluciones tecnológicas avanzadas y soporte especializado.
+
+        </p>
+
+        <div class="about-points">
+
+          <div class="about-point">
+
+            <div class="point-icon">⚙</div>
+
+            <p>
+              Sistemas de automatización enfocados en eficiencia,
+              productividad y optimización industrial.
+            </p>
+
+          </div>
+
+          <div class="about-point">
+
+            <div class="point-icon">⬢</div>
+
+            <p>
+              Comprometidos con la innovación continua y
+              soluciones inteligentes para la Industria 4.0.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="about-right">
+
+        <img
+          src="img/equipo-industrial.png.png"
+          alt="Equipo industrial"
+        />
+
+        <div class="about-image-overlay"></div>
+
+      </div>
+
+    </div>
+
+    <!-- VALUES -->
+    <div class="about-values-grid">
+
+      <div class="about-value-card">
+
+        <div class="value-symbol">◎</div>
+
+        <h3>Excelencia</h3>
+
+        <p>
+          Soluciones industriales de alto nivel.
+        </p>
+
+      </div>
+
+      <div class="about-value-card">
+
+        <div class="value-symbol">◈</div>
+
+        <h3>Equipo Experto</h3>
+
+        <p>
+          Profesionales especializados y certificados.
+        </p>
+
+      </div>
+
+      <div class="about-value-card">
+
+        <div class="value-symbol">✦</div>
+
+        <h3>Innovación</h3>
+
+        <p>
+          Tecnología moderna enfocada al futuro.
+        </p>
+
+      </div>
+
+      <div class="about-value-card">
+
+        <div class="value-symbol">⬡</div>
+
+        <h3>Compromiso</h3>
+
+        <p>
+          Atención personalizada y soporte técnico.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="about-bottom-bar">
+
+      <div class="bottom-item">
+        ⚡ Automatización Industrial
+      </div>
+
+      <div class="bottom-item">
+        🖥 Sistemas SCADA
+      </div>
+
+      <div class="bottom-item">
+        🔧 Integración de procesos
+      </div>
+
+      <div class="bottom-item">
+        🤖 Industria 4.0
+      </div>
+
+    </div>
 
   </div>
-</div></li></p>
-        </div>
 
-        <div class="about-cards">
-          <div class="info-card" data-delay="0">
-            <div class="card-icon">◈</div>
-            <h3>Nuestros Valores</h3>
-            <p>Fundamentales son la calidad, la integridad, la innovación y el servicio al cliente. Estos valores guían todo lo que hacemos y son el núcleo de nuestra cultura empresarial. 
-Creemos en construir relaciones sólidas y duraderas con nuestros clientes, basadas en la confianza y la colaboración.</p>
-          </div>
-          <div class="info-card" data-delay="100">
-            <div class="card-icon">◉</div>
-            <h3>Nuestra Mision</h3>
-            <p>Es proporcionar soluciones de automatización de alta calidad que impulsen el éxito de nuestros clientes. Estamos dedicados a diseñar, desarrollar e implementar sistemas de control y software de vanguardia que hagan que las operaciones sean más inteligentes, más seguras y más sostenibles. 
-Trabajamos en estrecha colaboración con nuestros clientes para comprender sus necesidades únicas y ofrecer soluciones personalizadas que superen sus expectativas</p>
-          </div>
-          <div class="info-card" data-delay="200">
-            <div class="card-icon">◊</div>
-            <h3>Nuestro Compromiso</h3>
-            <p>En Control 4.0, nos enorgullece nuestro compromiso con la excelencia. Nuestro equipo de expertos en automatización está formado por profesionales apasionados y altamente calificados que trabajan incansablemente para estar a la altura de los desafíos de la industria. Creemos en la mejora continua y nos esforzamos por mantenernos a la vanguardia de la tecnología y las mejores prácticas..</p>
-          </div>
-           <div class="info-card" data-delay="200">
-            <div class="card-icon">◊</div>
-            <h3>Nuestro Objetivo Siempre sera:</h3>
-            <p><ul class="about-list">
-    <li>⬡ Mejorar el tiempo de respuesta a las preguntas del cliente</li>
-    <li>⬡ Mejorar los puntos débiles en volúmenes de ventas ascendentes/cruzadas</li>
-    <li>⬡ Dar soporte técnico al personal que lo requiera</li>
-    <li>⬡ Servicio especializado las 24 horas, los 7 días de la semana</li>
-  </ul></p>
-          </div>
-        </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- VISIÓN -->
+<!-- ========================================================= -->
+
+<section class="vision-section">
+
+  <div class="vision-container">
+
+    <!-- PANEL IZQUIERDO -->
+    <div class="vision-left">
+
+      <div class="vision-badge">
+        NUESTRA VISION
       </div>
-    </div>
-  </section>
 
-  <!-- ═══════════════════════════════════════ SERVICIOS ════════════════════════════════════ -->
+      <h2 class="vision-title">
+        Impulsamos la<br>
+        <span>Industria del Futuro</span>
+      </h2>
+
+      <p class="vision-description">
+        Nuestra visión es transformar la forma en que las industrias
+        operan mediante automatización inteligente, integración digital
+        y soluciones tecnológicas de alto impacto.
+      </p>
+
+      <div class="vision-points">
+
+        <div class="vision-point">
+
+          <div class="vision-icon">◎</div>
+
+          <div>
+            <h4>Innovación Tecnológica</h4>
+            <p>
+              Estamos decidados a diseñar, desarrollar e implementar sistemas de control y software de vanguardia que hagan que las aoperaciones sean mas inteligentes, mas seguras y mas sostenibles.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="vision-point">
+
+          <div class="vision-icon">◈</div>
+
+          <div>
+            <h4>Transformación Industrial</h4>
+            <p>
+              
+              Trabajamos en estrecha colaboracion conn nuestros clientes para comprender sus necesidades unicas y ofrecer soluciones personalizadas que superann sus expectativas.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="vision-point">
+
+          <div class="vision-icon">◉</div>
+
+          <div>
+            <h4>Soluciones Inteligentes</h4>
+            <p>
+              Diseñamos plataformas y soluciones enfocadas en eficiencia,
+              conectividad y crecimiento industrial.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- PANEL DERECHO -->
+    <div class="vision-right">
+
+      <img src="img/robotics_hd.png" alt="Vision Industrial">
+
+      <div class="vision-glow"></div>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="vision-bottom">
+
+    <div class="vision-stat">
+      <h3>24/7</h3>
+      <p>Soporte Industrial</p>
+    </div>
+
+    <div class="vision-stat">
+      <h3>+500</h3>
+      <p>Clientes, Colaboracion que genera confianza</p>
+    </div>
+
+    <div class="vision-stat">
+      <h3>4.0</h3>
+      <p>Innovacion que impulsa resultados</p>
+    </div>
+
+    <div class="vision-stat">
+      <h3>100%</h3>
+      <p> Comprometidos con la calidad y seguridad</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- NUESTROS VALORES -->
+<!-- ========================================================= -->
+
+<section class="values-section">
+
+  <div class="section-container">
+
+    <div class="section-label">
+      // NUESTROS VALORES
+    </div>
+
+    <h2 class="section-title">
+      Nuestros<br>
+      <span class="accent">Valores</span>
+    </h2>
+
+    <div class="values-grid">
+
+      <!-- CARD -->
+      <div class="value-card">
+
+        <div class="value-number">01</div>
+
+        <div class="value-icon">◈</div>
+
+        <h3>Calidad</h3>
+
+        <p>
+          Nos comprometemos a ofrecer soluciones Y servicios de la mas alta calidad, suoerando las expectativas d nuestros clientes.
+        </p>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="value-card">
+
+        <div class="value-number">02</div>
+
+        <div class="value-icon">◎</div>
+
+        <h3>Integridad</h3>
+
+        <p>
+          Actuamos con honestidad y etica en todas nuestras acciones, generando confianza y credibilidad en cada relacion.
+        </p>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="value-card">
+
+        <div class="value-number">03</div>
+
+        <div class="value-icon">◉</div>
+
+        <h3>Innovación</h3>
+
+        <p>
+          Fomentamos la creatividad y la mejora continua para desarrolar soluciones inteligentes que impulsen el progreso de la industria.
+        </p>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="value-card">
+
+        <div class="value-number">04</div>
+
+        <div class="value-icon">⬢</div>
+
+        <h3>Compromiso</h3>
+
+        <p>
+          Escuchamos, entendemos y nos compromentemos a brindar un sevicio cercano, agil y personalizado para cada cliente.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- EXTRA INFO -->
+    <div class="values-banner">
+
+      <div class="banner-line"></div>
+
+      <div class="banner-content">
+
+        <h3>
+          Automatizamos hoy,<br>
+          optimizamos el mañana.
+        </h3>
+
+        <p>
+          Construimos relaciones sólidas basadas en confianza,
+          colaboración y excelencia tecnológica.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+  <!-- ========================================================= -->
+  <!-- SERVICIOS -->
+  <!-- ========================================================= -->
+
   <section id="servicios" class="services">
+
     <div class="section-container">
-      <div class="section-label">// 02 — SERVICIOS</div>
-      <h2 class="section-title">Nuestros Servicos<br/><span class="accent">Prestamos un amplio abanico de servicos que garantizan resultaods cuantificables y unas consecuencias positivas para su negocio.<p>Principales Servicos Solicitados:</p></span></h2>
+
+      <div class="section-label">
+        // 02 — SERVICIOS
+      </div>
+
+      <h2 class="section-title">
+
+        Soluciones tecnológicas<br>
+        <span class="accent">para la industria.</span>
+
+      </h2>
 
       <div class="services-grid">
-        <div class="service-card" data-index="01">
+
+        <!-- CARD -->
+        <div class="service-card">
+
           <div class="service-glow"></div>
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="32" cy="32" r="8" fill="currentColor" opacity="0.2"/><line x1="32" y1="4" x2="32" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="32" y1="52" x2="32" y2="60" stroke="currentColor" stroke-width="1.5"/><line x1="4" y1="32" x2="12" y2="32" stroke="currentColor" stroke-width="1.5"/><line x1="52" y1="32" x2="60" y2="32" stroke="currentColor" stroke-width="1.5"/></svg>
-          </div>
-          <h3>Reparacion de Drivers</h3>
-          <p><img src="Drivers.jpg" width="70%"</p>
-          <div class="service-arrow">→</div>
+
+          <img src="Drivers.jpg" class="service-img" alt="Drivers" />
+
+          <h3>Reparación de Drivers</h3>
+
         </div>
 
-        <div class="service-card" data-index="02">
+        <!-- CARD -->
+        <div class="service-card">
+
           <div class="service-glow"></div>
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64"><rect x="8" y="8" width="48" height="48" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M20 32 L28 40 L44 24" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-          </div>
+
+          <img src="automatizacion.jpg" class="service-img" alt="Automatización" />
+
           <h3>Automatización Industrial</h3>
-          <p><img src="automatizacion.jpg" width="70%"</p>
-          <div class="service-arrow">→</div>
+
         </div>
 
-        <div class="service-card" data-index="03">
+        <!-- CARD -->
+        <div class="service-card">
+
           <div class="service-glow"></div>
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64"><polygon points="32,8 56,20 56,44 32,56 8,44 8,20" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="32" cy="32" r="6" fill="currentColor" opacity="0.4"/></svg>
-          </div>
+
+          <img src="mantenimiento.jpg" class="service-img" alt="Mantenimiento" />
+
           <h3>Mantenimiento Industrial</h3>
-          <p><img src="mantenimiento.jpg" width="70%"</p>
-          <div class="service-arrow">→</div>
+
         </div>
 
-        <div class="service-card" data-index="04">
+        <!-- CARD -->
+        <div class="service-card">
+
           <div class="service-glow"></div>
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64"><path d="M8 48 C8 48 20 16 32 32 C44 48 56 16 56 16" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="32" cy="32" r="4" fill="currentColor"/></svg>
-          </div>
-          <h3>Reparaciones Electronicas</h3>
-          <p><img src="reparaciones.jpg" width="70%"</p>
-          <div class="service-arrow">→</div>
+
+          <img src="reparaciones.jpg" class="service-img" alt="Electrónica" />
+
+          <h3>Reparaciones Electrónicas</h3>
+
         </div>
 
-        <div class="service-card" data-index="05">
+        <!-- CARD -->
+        <div class="service-card">
+
           <div class="service-glow"></div>
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64"><circle cx="16" cy="32" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="48" cy="32" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="32" cy="14" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="32" cy="50" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="22" y1="32" x2="42" y2="32" stroke="currentColor" stroke-width="1.5"/><line x1="32" y1="20" x2="32" y2="44" stroke="currentColor" stroke-width="1.5"/></svg>
-          </div>
-          <h3>Servico de Impresion 3D</h3>
-          <p><img src="impresion3d.jpg"</p>
-          <div class="service-arrow">→</div>
+
+          <img src="impresion3d.jpg" class="service-img" alt="Impresión 3D" />
+
+          <h3>Impresión 3D</h3>
+
         </div>
 
-        <div class="service-card" data-index="06">
+        <!-- CARD -->
+        <div class="service-card">
+
           <div class="service-glow"></div>
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64"><rect x="12" y="20" width="40" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M20 20 L32 8 L44 20" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="32" y1="34" x2="32" y2="34" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><rect x="24" y="30" width="16" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          </div>
-          <h3>Sistema Scada</h3>
-          <p><img src="sistema.jpg" width="70%"</p>
-          <div class="service-arrow">→</div>
+
+          <img src="sistema.jpg" class="service-img" alt="SCADA" />
+
+          <h3>Sistemas SCADA</h3>
+
         </div>
 
-        <div class="service-card" data-index="03">
-  <div class="service-glow"></div>
+        <!-- CARD -->
+        <div class="service-card">
 
-  <div class="service-icon">
-    <svg viewBox="0 0 64 64">
-      <polygon points="32,8 56,20 56,44 32,56 8,44 8,20"
-        fill="none" stroke="currentColor" stroke-width="1.5"/>
-      <circle cx="32" cy="32" r="6" fill="currentColor" opacity="0.4"/>
-    </svg>
-  </div>
+          <div class="service-glow"></div>
 
-  <h3>OTROS SERVICOS</h3>
-  <ul class="service-list">
-    <li>Asesoría técnica profesional</li>
-    <li>Pólizas de mantenimiento</li>
-    <li>Reparación de tarjetas electrónicas</li>
-    <li>Reparación de motores</li>
-    <li>Detección y corrección de fallas electromecánicas</li>
-    <li>Reemplazo de PLC obsoletos</li>
-    <li>Migración de programación PLC</li>
-    <li>Seguridad en maquinaria industrial</li>
-    <li>Reparación y mantenimiento de compresores</li>
-    <li>Reparación de equipos de refrigeración</li>
-    <li>Automatización residencial</li>
-    <li>Maquinado</li>
-    <li>Diseño y elaboración de fixturas</li>
-    <li>Herrería en general</li>
-    <li>Mantenimiento a nave industrial</li>
-    <li>Mantenimiento a subestaciones eléctricas</li>
-  </ul>
+          <img src="maquinado.png" class="service-img" alt="Maquinado" />
 
-  <div class="service-arrow">→</div>
-</div>
+          <h3>Servicio de maquinado</h3>
 
+        </div>
+
+        <!-- CARD -->
+        <div class="service-card">
+
+          <div class="service-glow"></div>
+
+          <img src="seguridadindustrial.png" class="service-img" alt="Seguridad Industrial" />
+
+          <h3>Seguridad de maquinaria industrial</h3>
+
+        </div>
 
       </div>
+
     </div>
+
   </section>
 
-  <!-- ═══════════════════════════════════════ GALERÍA ══════════════════════════════════════ -->
-<section id="galeria" class="gallery">
+<!-- ═══════════════════════════════════════
+     SUMINISTROS INDUSTRIALES
+═══════════════════════════════════════ -->
+
+<section id="suministros" class="industrial-section">
+
   <div class="section-container">
-    <div class="section-label">// 03 — GALERÍA</div>
-    <h2 class="section-title">GALERIA DE PROYECTOS<br><span class="accent"></span></h2>
 
-    <div class="carousel">
+    <div class="section-label">
+      // 03 — SUMINISTROS
+    </div>
 
-      <button class="nav prev">&#10094;</button>
+    <h2 class="section-title">
+      Suministros<br>
+      <span class="accent">
+        Industriales
+      </span>
+    </h2>
 
-      <div class="carousel-track">
+    <p class="industrial-subtitle">
+      Equipos, herramientas y soluciones industriales
+      para impulsar la productividad y automatización.
+    </p>
 
-        <div class="slide">
-          <img src="img/1.jpg">
+    <div class="industrial-grid">
+
+      <!-- ITEM -->
+      <div class="industrial-card">
+
+        <img src="img/rodamiento.jpg" alt="Rodamientos">
+
+        <div class="industrial-overlay">
+
+          <h3>Rodamientos</h3>
+
+          <p>
+            Rodamientos de alta calidad para maquinaria industrial.
+          </p>
+
         </div>
 
-        <div class="slide">
-          <img src="img/2.jpg">
-        </div>
-
-        <div class="slide">
-          <img src="img/3.png">
-        </div>
-
-        <div class="slide">
-          <img src="img/4.jpg">
-        </div>
-
-        <div class="slide">
-          <img src="img/5.png">
-        </div>
-
-        <div class="slide">
-          <img src="img/6.png">
-        </div>
-
-        <div class="slide">
-          <img src="img/7.jpeg">
-        </div>
-        
-        <div class="slide">
-          <img src="img/8.jpeg">
-        </div>
-
-        <div class="slide">
-          <img src="img/9.jpeg">
-        </div>
-
-        <div class="slide">
-          <img src="img/10.jpeg">
-        </div>
-
-        <div class="slide">
-          <img src="img/11.jpeg">
-        </div>
-
-        <div class="slide">
-          <img src="img/12.jpeg">
-        </div>
-
-        <div class="slide">
-          <img src="img/13.jpeg">
-        </div>
-
-        <div class="slide">
-          <img src="img/14.jpeg">
-        </div>
-
-        <div class="slide">
-          <img src="img/15.jpeg">
-        </div>
-      
       </div>
 
-      <button class="nav next">&#10095;</button>
+      <!-- ITEM -->
+      <div class="industrial-card">
 
-    </div>
-  </div>
-</section>
-  <!-- ═══════════════════════════════════════ CONTACTO ═════════════════════════════════════ -->
-  <section id="contacto" class="contact">
-    <div class="section-container">
-      <div class="section-label">// 04 — CONTACTO</div>
-      <h2 class="section-title">Inicia la<br/><span class="accent">conversación.</span></h2>
+        <img src="img/transmision.jpg" alt="Transmisión de potencia">
 
-      <div class="contact-layout">
-        <div class="contact-info">
-          <p class="contact-lead">Cada gran transformación comienza con una pregunta. La tuya podría redefinir tu industria.</p>
-          <div class="contact-items">
-            <div class="contact-item">
-              <div class="c-icon">◈</div>
-              <div><strong>Ubicacion</strong><p>Tijuana Baja California</p></div>
-            </div>
-            <div class="contact-item">
-              <div class="c-icon">◉</div>
-              <div><strong>Respuesta</strong><p>Tiempo promedio: menos de 2 horas hábiles</p></div>
-            </div>
-            <div class="contact-item">
-              <div class="c-icon">◊</div>
-              <div><strong>Email directo</strong><p>ivan.miguel@control4.mx</p></div>
-            </div>
-          </div>
-          <div class="social-links">
-            <a href="#" class="social-btn">LI</a>
-            <a href="#" class="social-btn">TW</a>
-            <a href="#" class="social-btn">GH</a>
-          </div>
+        <div class="industrial-overlay">
+
+          <h3>Transmision de potencia</h3>
+
+          <p>
+            Componentes de transmisión de potencia para sistemas industriales.
+          </p>
+
         </div>
 
+      </div>
+
+      <!-- ITEM -->
+      <div class="industrial-card">
+
+        <img src="img/herramientas.jpg" alt="Herramientas industriales">
+
+        <div class="industrial-overlay">
+
+          <h3>Herramientas industriales</h3>
+
+          <p>
+            Equipamiento profesional para mantenimiento industrial.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="industrial-card">
+
+        <img src="img/electricos.jpg" alt="Equipos eléctricos">
+
+        <div class="industrial-overlay">
+
+          <h3>Equipos Eléctricos</h3>
+
+          <p>
+            Soluciones eléctricas para automatización y control industrial.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="industrial-card">
+
+        <img src="img/seguridad.jpg" alt="Seguridad industrial">
+
+        <div class="industrial-overlay">
+
+          <h3>Seguridad Industrial</h3>
+
+          <p>
+            Protección y seguridad para operaciones industriales.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="industrial-card">
+
+        <img src="img/neumatica.jpg" alt="Neumática">
+
+        <div class="industrial-overlay">
+
+          <h3>Neumática</h3>
+
+          <p>
+            Componentes neumáticos para sistemas de automatización.
+          </p>
+
+        </div>
+
+      </div>
+
+       <!-- ITEM -->
+      <div class="industrial-card">
+
+        <img src="img/lubricantes.jpg" alt="Lubricantes y Grasas">
+
+        <div class="industrial-overlay">
+
+          <h3>Lubricantes y Grasas</h3>
+
+          <p>
+            Lubricantes industriales para maquinaria y equipos.
+          </p>
+
+        </div>
+
+      </div>
+
+       <!-- ITEM -->
+      <div class="industrial-card">
+
+        <img src="img/mangueras.jpg" alt="Mangueras y conexiones">
+
+        <div class="industrial-overlay">
+
+          <h3>Mangueras y conexiones</h3>
+
+          <p>
+            Mangueras, conexiones y accesorios para sistemas neumáticos.
+          </p>
+
+        </div>
+
+      </div>
+
+       <!-- ITEM -->
+      <div class="industrial-card">
+
+        <img src="img/abrasivos.jpg" alt="Abrasivos">
+
+        <div class="industrial-overlay">
+
+          <h3>Abrasivos</h3>
+
+          <p>
+            Abrasivos industriales para procesos de corte, pulido y limpieza.
+          </p>
+
+        </div>
+
+      </div>
+
+       <!-- ITEM -->
+      <div class="industrial-card">
+
+        <img src="img/tornilleria.jpg" alt="Tornillería y Fijación">
+
+        <div class="industrial-overlay">
+
+          <h3>Tornillería y Fijacion</h3>
+
+          <p>
+            Tornillería, pernos, tuercas y elementos de fijación industrial.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+  <!-- ========================================================= -->
+  <!-- GALERIA -->
+  <!-- ========================================================= -->
+
+  <section id="galeria" class="gallery">
+
+    <div class="section-container">
+
+      <div class="section-label">
+        // 03 — GALERÍA
+      </div>
+
+      <h2 class="section-title">
+
+        Proyectos &<br>
+        <span class="accent">tecnología.</span>
+
+      </h2>
+
+      <div class="carousel">
+
+        <button class="nav prev">&#10094;</button>
+
+        <div class="carousel-track">
+
+          <div class="slide">
+            <img src="img/1.jpg" alt="">
+          </div>
+
+          <div class="slide">
+            <img src="img/2.jpg" alt="">
+          </div>
+
+          <div class="slide">
+            <img src="img/3.png" alt="">
+          </div>
+
+          <div class="slide">
+            <img src="img/4.jpg" alt="">
+          </div>
+
+          <div class="slide">
+            <img src="img/5.png" alt="">
+          </div>
+
+          <div class="slide">
+            <img src="img/6.png" alt="">
+          </div>
+
+        </div>
+
+        <button class="nav next">&#10095;</button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- CONTACTO -->
+  <!-- ========================================================= -->
+
+  <section id="contacto" class="contact">
+
+    <div class="section-container">
+
+      <div class="section-label">
+        // 04 — CONTACTO
+      </div>
+
+      <h2 class="section-title">
+
+        Hablemos de tu<br>
+        <span class="accent">próximo proyecto.</span>
+
+      </h2>
+
+      <div class="contact-layout">
+
+        <!-- INFO -->
+        <div class="contact-info">
+
+          <p class="contact-lead">
+
+            Estamos listos para ayudarte a modernizar tus procesos
+            industriales con soluciones inteligentes.
+
+          </p>
+
+          <div class="contact-items">
+
+            <div class="contact-item">
+
+              <div class="c-icon">◈</div>
+
+              <div>
+
+                <strong>Ubicación</strong>
+                <p>Tijuana, Baja California</p>
+
+              </div>
+
+            </div>
+
+            <div class="contact-item">
+
+              <div class="c-icon">◉</div>
+
+              <div>
+
+                <strong>Email</strong>
+                <p>ivan.miguel@control4.mx</p>
+
+              </div>
+
+            </div>
+
+            <div class="contact-item">
+
+              <div class="c-icon">◊</div>
+
+              <div>
+
+                <strong>WhatsApp</strong>
+                <p>664 195 0359</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- FORM -->
         <form class="contact-form" id="contactForm" novalidate>
+
           <div class="form-group">
-            <input type="text" id="nombre" name="nombre" required placeholder=" " autocomplete="off" />
-            <label for="nombre">Nombre completo</label>
+
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              required
+              placeholder=" "
+              autocomplete="off"
+            />
+
+            <label for="nombre">
+              Nombre completo
+            </label>
+
             <div class="form-line"></div>
-            <span class="form-error" id="nombreError">Este campo es requerido</span>
+
           </div>
 
           <div class="form-group">
-            <input type="email" id="correo" name="correo" required placeholder=" " autocomplete="off" />
-            <label for="correo">Correo electrónico</label>
+
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              required
+              placeholder=" "
+              autocomplete="off"
+            />
+
+            <label for="correo">
+              Correo electrónico
+            </label>
+
             <div class="form-line"></div>
-            <span class="form-error" id="correoError">Ingresa un correo válido</span>
+
           </div>
 
           <div class="form-group">
-            <textarea id="mensaje" name="mensaje" required placeholder=" " rows="4"></textarea>
-            <label for="mensaje">Tu mensaje</label>
+
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              required
+              placeholder=" "
+              rows="5"
+            ></textarea>
+
+            <label for="mensaje">
+              Tu mensaje
+            </label>
+
             <div class="form-line"></div>
-            <span class="form-error" id="mensajeError">El mensaje no puede estar vacío</span>
+
           </div>
 
           <button type="submit" class="btn btn-primary btn-full">
-            <span id="btnText">Enviar mensaje</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22 11 13 2 9 22 2z"/></svg>
+
+            <span id="btnText">
+              Enviar mensaje
+            </span>
+
           </button>
 
           <div class="form-success" id="formSuccess">
-            <span>✓</span> Mensaje recibido. Te contactaremos en breve.
+
+            ✓ Mensaje enviado correctamente
+
           </div>
+
         </form>
+
       </div>
+
     </div>
+
   </section>
 
+  <!-- ========================================================= -->
   <!-- FOOTER -->
+  <!-- ========================================================= -->
+
   <footer class="footer">
+
     <div class="footer-container">
+
       <div class="footer-logo">
-        <span class="logo-icon"><img src="logo.png" width="15%"></span>
-        <span class="logo-text">Contro4.0<span class="logo-accent">Automatizacion</span></span>
+
+        <img src="logo.png" width="140" alt="Logo" />
+
       </div>
-      <p class="footer-copy">© 2026 Control4.0 Automatizacion. Todos los derechos reservados. Construido para el futuro.</p>
-      <div class="footer-links">
-        <a href="#">Privacidad</a>
-        <a href="#">Términos</a>
-        <a href="#">Seguridad</a>
-      </div>
+
+      <p class="footer-copy">
+
+        © 2026 Control4.0 Automatización.
+        Todos los derechos reservados.
+
+      </p>
+
     </div>
+
   </footer>
 
+  <!-- ========================================================= -->
+  <!-- WHATSAPP FLOAT -->
+  <!-- ========================================================= -->
+
+  <a
+    href="https://wa.me/526641950359"
+    target="_blank"
+    class="whatsapp-float"
+  >
+
+    <svg viewBox="0 0 32 32" fill="currentColor">
+
+      <path d="M16.04 3C9.41 3 4 8.4 4 15.03c0 2.65.87 5.1 2.34 7.07L4 29l7.1-2.3c1.9 1.03 4.06 1.57 6.24 1.57 6.63 0 12.04-5.4 12.04-12.03C29.38 8.4 22.67 3 16.04 3zm0 21.9c-2.03 0-3.96-.6-5.6-1.73l-.4-.26-4.2 1.36 1.37-4.1-.27-.42a9.7 9.7 0 01-1.52-5.16c0-5.3 4.32-9.6 9.63-9.6s9.63 4.3 9.63 9.6-4.32 9.6-9.63 9.6z"/>
+
+    </svg>
+
+  </a>
+
+  <!-- ========================================================= -->
+  <!-- EMAILJS -->
+  <!-- ========================================================= -->
+
+  <script>
+
+    (function(){
+
+      emailjs.init("YOEYFLTom_k2hDCGI");
+
+    })();
+
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function(e){
+
+      e.preventDefault();
+
+      emailjs.sendForm(
+        "service_exp6h7i",
+        "template_ng6x5bv",
+        this
+      )
+      .then(() => {
+
+        document.getElementById("formSuccess").style.display = "block";
+
+        form.reset();
+
+      });
+
+    });
+
+  </script>
+
+  <!-- JS -->
   <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<!-- ═══════════════════════════════════════ public key ═════════════════════════════════════ -->
-<script>
-(function(){
-  emailjs.init("YOEYFLTom_k2hDCGI");
-})();
-</script>
-<a href="https://wa.me/526641950359" target="_blank" class="whatsapp-float">
-  <svg viewBox="0 0 32 32" fill="currentColor">
-    <path d="M16.04 3C9.41 3 4 8.4 4 15.03c0 2.65.87 5.1 2.34 7.07L4 29l7.1-2.3c1.9 1.03 4.06 1.57 6.24 1.57 6.63 0 12.04-5.4 12.04-12.03C29.38 8.4 22.67 3 16.04 3zm0 21.9c-2.03 0-3.96-.6-5.6-1.73l-.4-.26-4.2 1.36 1.37-4.1-.27-.42a9.7 9.7 0 01-1.52-5.16c0-5.3 4.32-9.6 9.63-9.6s9.63 4.3 9.63 9.6-4.32 9.6-9.63 9.6zm5.28-7.17c-.29-.14-1.72-.85-1.98-.95-.26-.1-.45-.14-.64.14-.19.29-.73.95-.9 1.14-.16.19-.33.22-.62.07-.29-.14-1.23-.45-2.35-1.44-.87-.78-1.45-1.74-1.62-2.03-.17-.29-.02-.45.12-.6.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.43s1.03 2.8 1.18 2.99c.14.19 2.03 3.1 4.92 4.34.69.3 1.23.48 1.65.62.69.22 1.32.19 1.82.12.56-.08 1.72-.7 1.96-1.38.24-.67.24-1.25.17-1.38-.07-.12-.26-.19-.55-.33z"/>
-  </svg>
-</a>
+
 </body>
 </html>

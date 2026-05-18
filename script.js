@@ -400,3 +400,22 @@ function showError() {
 
   setTimeout(() => msg.remove(), 3000);
 }
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const form = this;
+  const formData = new FormData(form);
+
+  fetch("enviar.php", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("formSuccess").classList.add("show");
+    form.reset();
+  })
+  .catch(error => {
+    alert("Error al enviar el mensaje");
+  });
+});
